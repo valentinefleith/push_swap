@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/02/28 15:55:25 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:20:26 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	ft_printf("test\n");
+	parse_args(argc, argv);
 }
