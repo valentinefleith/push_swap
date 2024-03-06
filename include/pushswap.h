@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/05 13:56:22 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:55:12 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack
 	struct s_stack 	*previous;
 }					t_stack;
 
-void parse_args(int argc, char **argv);
+t_stack *parse_args(int argc, char **argv);
 // prototypes here
 
 #endif
