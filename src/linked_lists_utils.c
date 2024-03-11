@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:13:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/12 00:07:03 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:12:08 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ void ft_stackadd_back(t_stack **stack, t_stack *new)
 	last = ft_stacklast(*stack);
 	last->next = new;
 	new->prev = last;
+}
+
+void ft_print_stack(t_stack *stack)
+{
+	while (stack)
+	{
+		if (stack->next)
+			ft_printf("%i -> ", stack->content);
+		else 
+			ft_printf("%i\n", stack->content);
+		stack = stack->next;
+	}
 }

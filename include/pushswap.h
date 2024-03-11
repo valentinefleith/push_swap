@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/12 00:05:47 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:11:51 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int *ft_atoi_tab(char **strs);
 t_stack *ft_stacknew(int content);
 t_stack *ft_stacklast(t_stack *stack);
 void ft_stackadd_back(t_stack **stack, t_stack *new);
+void ft_print_stack(t_stack *stack);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/06 12:20:26 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:12:25 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int main(int argc, char **argv)
 {
-	parse_args(argc, argv);
+	t_stack **stack;
+
+	stack = parse_args(argc, argv);
+	ft_print_stack(*stack);
 }

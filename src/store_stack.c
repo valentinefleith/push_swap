@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/12 00:06:00 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:19:11 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ t_stack **arr_to_linked_list(int *tab)
 	int i;
 
 	i = 0;
-	stack = NULL;
+	stack = malloc(sizeof(t_stack *));
+	if (stack == NULL)
+		return (NULL);
+	*stack = NULL;
 	while (tab[i])
 	{
 		new = ft_stacknew(tab[i]);
