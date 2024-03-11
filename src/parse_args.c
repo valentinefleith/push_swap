@@ -6,22 +6,23 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/06 16:10:23 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/11 20:35:26 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO : check -0
 
 #include "pushswap.h"
 
-static int is_valid_one(char *strs)
+static int is_valid_one(char *str)
 {
 	int i;
 
 	i = 0;
-	while (strs[i])
+	if (!ft_strncmp(str, "-0", 2))
+		return 0;
+	while (str[i])
 	{
-		if ((!ft_isdigit(strs[i]) && strs[i] != '-') || (strs[i] == '-' && i != 0))
+		if ((!ft_isdigit(str[i]) && str[i] != '-') || (str[i] == '-' && i != 0))
 			return 0;
 		i++;
 	}
@@ -31,12 +32,20 @@ static int is_valid_one(char *strs)
 static int are_valid_mult(char **strs)
 {
 	int i;
+	int j;
 
 	i = 0;
 	while (strs[i])
 	{
 		if (!is_valid_one(strs[i]))
 			return 0;
+		j = i;
+		while (strs[j])
+		{
+			if (ft_strlen(strs[i]) == ft_strlen(strs[j]) && !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
+				return 0;
+			j++;
+		}
 		i++;
 	}
 	return 1;
@@ -52,6 +61,7 @@ static t_stack *parse_one_arg(char *argv)
 	if (!are_valid_mult(args))
 	{
 		ft_printf("Format error.\n");
+		free(args);
 		exit(ARGUMENT_ERROR);
 	}
 	stack = arr_to_linked_list(args);
