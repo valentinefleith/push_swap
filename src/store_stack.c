@@ -12,10 +12,10 @@
 
 #include "pushswap.h"
 
-static long ft_atol(char *str)
+static long	ft_atol(char *str)
 {
-	long output;
-	int is_neg;
+	long	output;
+	int		is_neg;
 
 	if (!*str)
 		return (0);
@@ -39,25 +39,25 @@ static long ft_atol(char *str)
 	return (output);
 }
 
-static int get_tab_size(char **strs)
+static int	get_tab_size(char **strs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (strs[i])
 		i++;
-	return i;
+	return (i);
 }
 
-int *ft_atoi_tab(char **strs)
+int	*ft_atoi_tab(char **strs)
 {
-	int i;
-	long current;
-	int *tab;
-	
+	int		i;
+	long	current;
+	int		*tab;
+
 	tab = malloc(get_tab_size(strs) * sizeof(int));
 	if (tab == NULL)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (strs[i])
 	{
@@ -66,19 +66,19 @@ int *ft_atoi_tab(char **strs)
 		{
 			ft_printf("Format error.\n");
 			free(tab);
-			return NULL;
+			return (NULL);
 		}
 		tab[i] = (int)current;
 		i++;
 	}
-	return tab;
+	return (tab);
 }
 
-t_stack **arr_to_linked_list(int *tab)
+t_stack	**arr_to_linked_list(int *tab)
 {
-	t_stack **stack;
-	t_stack *new;
-	int i;
+	t_stack	**stack;
+	t_stack	*new;
+	int		i;
 
 	i = 0;
 	stack = malloc(sizeof(t_stack *));
@@ -90,11 +90,11 @@ t_stack **arr_to_linked_list(int *tab)
 		new = ft_stacknew(tab[i]);
 		if (new == NULL)
 		{
-			//ft_freestack(stack, i); // NOT IMPLEMENTED
-			return NULL;
+			// ft_freestack(stack, i); // NOT IMPLEMENTED
+			return (NULL);
 		}
 		ft_stackadd_back(stack, new);
 		i++;
 	}
-	return stack;	
+	return (stack);
 }

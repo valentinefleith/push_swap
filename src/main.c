@@ -12,9 +12,9 @@
 
 #include "pushswap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack **stack;
+	t_stack	**stack;
 
 	stack = parse_args(argc, argv);
 	ft_print_stack(*stack);

@@ -12,9 +12,9 @@
 
 #include "pushswap.h"
 
-t_stack *ft_stacknew(int content)
+t_stack	*ft_stacknew(int content)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = malloc(sizeof(t_stack));
 	if (node == NULL)
@@ -25,38 +25,38 @@ t_stack *ft_stacknew(int content)
 	return (node);
 }
 
-t_stack *ft_stacklast(t_stack *stack)
+t_stack	*ft_stacklast(t_stack *stack)
 {
 	if (!stack)
-		return NULL;
+		return (NULL);
 	while (stack->next)
 		stack = stack->next;
-	return stack;
+	return (stack);
 }
 
-void ft_stackadd_back(t_stack **stack, t_stack *new)
+void	ft_stackadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if (!stack)
-		return;
+		return ;
 	if (!*stack)
 	{
 		*stack = new;
-		return;
+		return ;
 	}
 	last = ft_stacklast(*stack);
 	last->next = new;
 	new->prev = last;
 }
 
-void ft_print_stack(t_stack *stack)
+void	ft_print_stack(t_stack *stack)
 {
 	while (stack)
 	{
 		if (stack->next)
 			ft_printf("%i -> ", stack->content);
-		else 
+		else
 			ft_printf("%i\n", stack->content);
 		stack = stack->next;
 	}

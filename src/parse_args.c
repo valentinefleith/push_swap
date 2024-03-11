@@ -10,52 +10,52 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "pushswap.h"
 
-static int is_valid_one(char *str)
+static int	is_valid_one(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!ft_strncmp(str, "-0", 2))
-		return 0;
+		return (0);
 	while (str[i])
 	{
 		if ((!ft_isdigit(str[i]) && str[i] != '-') || (str[i] == '-' && i != 0))
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1; 
+	return (1);
 }
 
-static int are_valid_mult(char **strs)
+static int	are_valid_mult(char **strs)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (strs[i])
 	{
 		if (!is_valid_one(strs[i]))
-			return 0;
+			return (0);
 		j = i;
 		while (strs[j])
 		{
-			if (i != j && ft_strlen(strs[i]) == ft_strlen(strs[j]) && !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
-				return 0;
+			if (i != j && ft_strlen(strs[i]) == ft_strlen(strs[j])
+				&& !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
-static t_stack **parse_one_arg(char *argv)
+static t_stack	**parse_one_arg(char *argv)
 {
-	char **args;
-	int *tab;
-	t_stack **stack;
+	char	**args;
+	int		*tab;
+	t_stack	**stack;
 
 	args = ft_split(argv, ' ');
 	if (args == NULL)
@@ -74,13 +74,13 @@ static t_stack **parse_one_arg(char *argv)
 	free(tab);
 	if (stack == NULL)
 		exit(MALLOC_ERROR);
-	return stack;
+	return (stack);
 }
 
-static t_stack **parse_several_args(char **argv)
+static t_stack	**parse_several_args(char **argv)
 {
-	int *tab;
-	t_stack **stack;
+	int		*tab;
+	t_stack	**stack;
 
 	argv++;
 	if (!are_valid_mult(argv))
@@ -95,14 +95,14 @@ static t_stack **parse_several_args(char **argv)
 	free(tab);
 	if (stack == NULL)
 		exit(MALLOC_ERROR);
-	return stack;
+	return (stack);
 }
 
-t_stack **parse_args(int argc, char **argv)
+t_stack	**parse_args(int argc, char **argv)
 {
 	if (argc < 2)
 		exit(ARGUMENT_ERROR);
 	if (argc == 2)
-		return parse_one_arg(argv[1]);
-	return parse_several_args(argv);
+		return (parse_one_arg(argv[1]));
+	return (parse_several_args(argv));
 }
