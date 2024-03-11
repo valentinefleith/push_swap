@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/11 23:57:08 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:24:16 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,7 @@ static t_stack **parse_several_args(char **argv)
 t_stack **parse_args(int argc, char **argv)
 {
 	if (argc < 2)
-	{
-		ft_printf("Error. You need to enter numbers in argument\n");
 		exit(ARGUMENT_ERROR);
-	}
 	if (argc == 2)
 		return parse_one_arg(argv[1]);
 	return parse_several_args(argv);
