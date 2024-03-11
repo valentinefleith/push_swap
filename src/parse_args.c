@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/11 20:35:26 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/03/11 23:57:08 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int are_valid_mult(char **strs)
 		j = i;
 		while (strs[j])
 		{
-			if (ft_strlen(strs[i]) == ft_strlen(strs[j]) && !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
+			if (i != j && ft_strlen(strs[i]) == ft_strlen(strs[j]) && !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
 				return 0;
 			j++;
 		}
@@ -51,9 +51,11 @@ static int are_valid_mult(char **strs)
 	return 1;
 }
 
-static t_stack *parse_one_arg(char *argv)
+static t_stack **parse_one_arg(char *argv)
 {
 	char **args;
+	int *tab;
+	t_stack **stack;
 
 	args = ft_split(argv, ' ');
 	if (args == NULL)
@@ -64,25 +66,39 @@ static t_stack *parse_one_arg(char *argv)
 		free(args);
 		exit(ARGUMENT_ERROR);
 	}
-	stack = arr_to_linked_list(args);
+	tab = ft_atoi_tab(args);
 	free(args);
+	if (tab == NULL)
+		exit(MALLOC_ERROR);
+	stack = arr_to_linked_list(tab);
+	free(tab);
 	if (stack == NULL)
 		exit(MALLOC_ERROR);
 	return stack;
 }
 
-static t_stack *parse_several_args(char **argv)
+static t_stack **parse_several_args(char **argv)
 {
+	int *tab;
+	t_stack **stack;
+
 	argv++;
 	if (!are_valid_mult(argv))
 	{
 		ft_printf("Format error.\n");
 		exit(ARGUMENT_ERROR);
 	}
-	return arr_to_linked_list(argv); // NOT IMPLEMENTED
+	tab = ft_atoi_tab(argv);
+	if (tab == NULL)
+		exit(MALLOC_ERROR);
+	stack = arr_to_linked_list(tab);
+	free(tab);
+	if (stack == NULL)
+		exit(MALLOC_ERROR);
+	return stack;
 }
 
-t_stack *parse_args(int argc, char **argv)
+t_stack **parse_args(int argc, char **argv)
 {
 	if (argc < 2)
 	{
