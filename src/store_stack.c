@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/12 00:19:11 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/04/10 01:45:16 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,35 @@ static int	get_tab_size(char **strs)
 	return (i);
 }
 
+static int	are_unique_nb(int *tab)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (tab[i])
+	{
+		j = i;
+		while (tab[j])
+		{
+			if (i != j && tab[i] == tab[j])
+			{
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+static int *print_error_and_free_tab(int *tab)
+{
+	ft_printf("Format error.\n");
+	free(tab);
+	return (NULL);
+}
+
 int	*ft_atoi_tab(char **strs)
 {
 	int		i;
@@ -63,14 +92,12 @@ int	*ft_atoi_tab(char **strs)
 	{
 		current = ft_atol(strs[i]);
 		if (current > INT_MAX || current < INT_MIN)
-		{
-			ft_printf("Format error.\n");
-			free(tab);
-			return (NULL);
-		}
+			return print_error_and_free_tab(tab);
 		tab[i] = (int)current;
 		i++;
 	}
+	if (!are_unique_nb(tab))
+		return print_error_and_free_tab(tab);
 	return (tab);
 }
 
