@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/03/12 00:24:16 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:14:36 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static t_stack	**parse_one_arg(char *argv)
 	char	**args;
 	int		*tab;
 	t_stack	**stack;
+	int		len;
 
 	args = ft_split(argv, ' ');
 	if (args == NULL)
@@ -70,7 +71,8 @@ static t_stack	**parse_one_arg(char *argv)
 	free(args);
 	if (tab == NULL)
 		exit(MALLOC_ERROR);
-	stack = arr_to_linked_list(tab);
+	len = get_tab_size(args);
+	stack = arr_to_linked_list(tab, len);
 	free(tab);
 	if (stack == NULL)
 		exit(MALLOC_ERROR);
@@ -81,6 +83,7 @@ static t_stack	**parse_several_args(char **argv)
 {
 	int		*tab;
 	t_stack	**stack;
+	int		len;
 
 	argv++;
 	if (!are_valid_mult(argv))
@@ -91,7 +94,8 @@ static t_stack	**parse_several_args(char **argv)
 	tab = ft_atoi_tab(argv);
 	if (tab == NULL)
 		exit(MALLOC_ERROR);
-	stack = arr_to_linked_list(tab);
+	len = get_tab_size(argv);
+	stack = arr_to_linked_list(tab, len);
 	free(tab);
 	if (stack == NULL)
 		exit(MALLOC_ERROR);

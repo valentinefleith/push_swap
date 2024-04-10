@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:13:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/04/10 01:27:20 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/04/10 01:52:46 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	ft_print_stack(t_stack *stack)
 			ft_printf("%i\n", stack->content);
 			break;
 		}
-		// stack = stack->next;
 	}
 	while (stack)
 	{
@@ -74,4 +73,17 @@ void	ft_print_stack(t_stack *stack)
 			ft_printf("%i\n", stack->content);
 		stack = stack->prev;
 	}
+}
+
+void ft_free_stack(t_stack **stack)
+{
+	t_stack *next;
+
+	while (*stack)
+	{
+		next = (*stack)->next;
+		free(*stack);
+		*stack = next;
+	}
+	free(stack);
 }

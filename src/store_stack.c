@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/04/10 01:45:16 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:12:59 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static long	ft_atol(char *str)
 	return (output);
 }
 
-static int	get_tab_size(char **strs)
+int	get_tab_size(char **strs)
 {
 	int	i;
 
@@ -49,16 +49,17 @@ static int	get_tab_size(char **strs)
 	return (i);
 }
 
-static int	are_unique_nb(int *tab)
+static int	are_unique_nb(int *tab, int len)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (tab[i])
+	ft_printf("%p\n", tab);
+	while (i < len)
 	{
 		j = i;
-		while (tab[j])
+		while (j < len)
 		{
 			if (i != j && tab[i] == tab[j])
 			{
@@ -71,7 +72,7 @@ static int	are_unique_nb(int *tab)
 	return (1);
 }
 
-static int *print_error_and_free_tab(int *tab)
+static int	*print_error_and_free_tab(int *tab)
 {
 	ft_printf("Format error.\n");
 	free(tab);
@@ -83,8 +84,10 @@ int	*ft_atoi_tab(char **strs)
 	int		i;
 	long	current;
 	int		*tab;
+	int		size;
 
-	tab = malloc(get_tab_size(strs) * sizeof(int));
+	size = get_tab_size(strs);
+	tab = malloc(size * sizeof(int));
 	if (tab == NULL)
 		return (NULL);
 	i = 0;
@@ -92,16 +95,16 @@ int	*ft_atoi_tab(char **strs)
 	{
 		current = ft_atol(strs[i]);
 		if (current > INT_MAX || current < INT_MIN)
-			return print_error_and_free_tab(tab);
+			return (print_error_and_free_tab(tab));
 		tab[i] = (int)current;
 		i++;
 	}
-	if (!are_unique_nb(tab))
-		return print_error_and_free_tab(tab);
+	if (!are_unique_nb(tab, i))
+		return (print_error_and_free_tab(tab));
 	return (tab);
 }
 
-t_stack	**arr_to_linked_list(int *tab)
+t_stack	**arr_to_linked_list(int *tab, int len)
 {
 	t_stack	**stack;
 	t_stack	*new;
@@ -112,7 +115,7 @@ t_stack	**arr_to_linked_list(int *tab)
 	if (stack == NULL)
 		return (NULL);
 	*stack = NULL;
-	while (tab[i])
+	while (i < len)
 	{
 		new = ft_stacknew(tab[i]);
 		if (new == NULL)
