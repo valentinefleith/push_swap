@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/04/10 02:12:59 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/04/10 02:30:56 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ static int	are_unique_nb(int *tab, int len)
 	int	j;
 
 	i = 0;
-	ft_printf("%p\n", tab);
 	while (i < len)
 	{
 		j = i;
@@ -120,7 +119,7 @@ t_stack	**arr_to_linked_list(int *tab, int len)
 		new = ft_stacknew(tab[i]);
 		if (new == NULL)
 		{
-			// ft_freestack(stack, i); // NOT IMPLEMENTED
+			ft_free_stack(stack);
 			return (NULL);
 		}
 		ft_stackadd_back(stack, new);
