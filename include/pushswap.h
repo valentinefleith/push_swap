@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 14:43:36 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 16:16:34 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int					get_tab_size(char **strs);
 
 // STACK OPERATIONS
 void				ft_swap_2_first_elems(t_stack **stack);
+void				ft_push(t_stack **from, t_stack **to);
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);
