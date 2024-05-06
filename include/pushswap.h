@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 11:37:52 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:16:49 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ t_stack				*ft_stacklast(t_stack *stack);
 void				ft_stackadd_back(t_stack **stack, t_stack *new);
 void				ft_print_lst(t_stack *stack);
 void ft_print_stacks(t_stack *a, t_stack *b);
+
+
+// FREE FUNCTIONS
 void				ft_free_stack(t_stack **stack);
+int	*print_error_and_free_tab(int *tab);
+void ft_free_strs(char **args);
 
 #endif

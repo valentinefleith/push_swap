@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 11:41:57 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:15:53 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,6 @@ static int	are_unique_nb(int *tab, int len)
 		i++;
 	}
 	return (1);
-}
-
-static int	*print_error_and_free_tab(int *tab)
-{
-	ft_printf("Format error.\n");
-	free(tab);
-	return (NULL);
 }
 
 int	*ft_atoi_tab(char **strs)

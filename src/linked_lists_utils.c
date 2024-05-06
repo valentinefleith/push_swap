@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:13:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 11:15:07 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:16:15 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,4 @@ void	ft_stackadd_back(t_stack **stack, t_stack *new)
 	last = ft_stacklast(*stack);
 	last->next = new;
 	new->prev = last;
-}
-
-
-void ft_free_stack(t_stack **stack)
-{
-	t_stack *next;
-
-	while (*stack)
-	{
-		next = (*stack)->next;
-		free(*stack);
-		*stack = next;
-	}
-	free(stack);
 }

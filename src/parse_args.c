@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 11:39:09 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:15:23 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static t_stack	**parse_one_arg(char *argv)
 		exit(ARGUMENT_ERROR);
 	}
 	tab = ft_atoi_tab(args);
-	free(args);
+	ft_free_strs(args);
 	if (tab == NULL)
 		exit(MALLOC_ERROR);
 	stack = arr_to_linked_list(tab);
