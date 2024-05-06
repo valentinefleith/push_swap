@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 14:45:17 by vafleith         ###   ########.fr       */
+/*   Created: 2024/05/06 14:10:23 by vafleith          #+#    #+#             */
+/*   Updated: 2024/05/06 15:50:30 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	main(int argc, char **argv)
+void ft_swap_2_first_elems(t_stack **stack)
 {
-	t_stack	**stack_a;
-	t_stack *stack_b;
+	t_stack *first;
+	t_stack *second;
 
-	stack_a = parse_args(argc, argv);
-	stack_b = NULL;
-	ft_printf("BEFORE SWAP:\n");
-	ft_print_stacks(*stack_a, stack_b);
-	ft_swap_2_first_elems(stack_a);
-	ft_printf("AFTER SWAP:\n");
-	ft_print_stacks(*stack_a, stack_b);
-	ft_free_stack(stack_a);
+	if (!*stack || !(*stack)->next)
+		return;
+	first = *stack;
+	second = (*stack)->next;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	second->next = first;
+	*stack = second;
+	first->prev = second;
+	second->prev = NULL;
 }
