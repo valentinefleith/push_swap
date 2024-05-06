@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:13:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/04/10 02:44:22 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:15:07 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ t_stack	*ft_stacknew(int content)
 int ft_stacklen(t_stack *stack)
 {
 	int len;
-
+	
+	len = 0;
 	while (stack)
 	{
 		len++;
