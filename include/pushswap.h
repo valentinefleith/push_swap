@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/04/10 02:58:56 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:06:02 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int ft_stacklen(t_stack *stack);
 t_stack				*ft_stacklast(t_stack *stack);
 void				ft_stackadd_back(t_stack **stack, t_stack *new);
 void				ft_print_lst(t_stack *stack);
-void ft_print_stacks(t_stack *longest, t_stack *shortest);
+void ft_print_stacks(t_stack *a, t_stack *b);
 void				ft_free_stack(t_stack **stack);
 
 #endif
