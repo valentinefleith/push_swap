@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 12:40:33 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:43:18 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	is_valid_one(char *str)
 	int	i;
 
 	i = 0;
+	if (ft_strlen(str) == 1 && *str == '-')
+		return (0);
 	if (!ft_strncmp(str, "-0", 2))
 		return (0);
 	while (str[i])
