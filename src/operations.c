@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:10:23 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 18:47:51 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 19:02:19 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	ft_push(t_stack **from, t_stack **to)
 	if (!*from)
 		return ;
 	from_first = (*from)->next;
-	from_first->prev = NULL;
+	if (from_first)
+		from_first->prev = NULL;
 	to_first = *from;
 	to_first->next = *to;
 	if (*to)
