@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:52:56 by vafleith         ###   ########.fr       */
+/*   Created: 2024/05/06 20:45:48 by vafleith          #+#    #+#             */
+/*   Updated: 2024/05/06 20:50:47 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	main(int argc, char **argv)
+int	is_sorted(t_stack *stack)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	int	current;
 
-	stack_a = parse_args(argc, argv);
-	stack_b = malloc(sizeof(t_stack *));
-	if (stack_b == NULL)
+	if (!stack || !stack->next)
 		return (1);
-	*stack_b = NULL;
-	ft_print_stacks(*stack_a, *stack_b);
-	if (is_sorted(*stack_a))
-		ft_printf("SORTED\n");
-	else
-		ft_printf("NOT SORTED\n");
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
+	current = stack->content;
+	while (stack->next)
+	{
+		if (current > stack->next->content)
+			return (0);
+		stack = stack->next;
+		current = stack->content;
+	}
+	return (1);
 }

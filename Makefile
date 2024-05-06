@@ -6,7 +6,7 @@
 #    By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 15:31:12 by vafleith          #+#    #+#              #
-#    Updated: 2024/05/06 20:27:05 by vafleith         ###   ########.fr        #
+#    Updated: 2024/05/06 20:51:44 by vafleith         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,15 @@ PARSE_DIR = parse
 PARSE_SRCS = parse_args.c store_stack.c
 PARSE_SRCS := $(addprefix $(PARSE_DIR)/, $(PARSE_SRCS))
 
+SORT_DIR = sort
+SORT_SRCS = sort_utils.c
+SORT_SRCS := $(addprefix $(SORT_DIR)/, $(SORT_SRCS))
+
 UTILS_DIR = utils
 UTILS_SRCS = linked_lists_utils.c print_stack.c free.c
 UTILS_SRCS := $(addprefix $(UTILS_DIR)/, $(UTILS_SRCS))
 
-SRCS = main.c $(OPERATIONS_SRCS) $(PARSE_SRCS) $(UTILS_SRCS)
+SRCS = main.c $(OPERATIONS_SRCS) $(PARSE_SRCS) $(SORT_SRCS) $(UTILS_SRCS)
 SRCS := $(addprefix $(SRC_DIR)/, $(SRCS))
 
 OBJ_DIR = build
