@@ -12,13 +12,13 @@
 
 #include "pushswap.h"
 
-void ft_swap_2_first_elems(t_stack **stack)
+void	ft_swap_2_first_elems(t_stack **stack)
 {
-	t_stack *first;
-	t_stack *second;
+	t_stack	*first;
+	t_stack	*second;
 
 	if (!*stack || !(*stack)->next)
-		return;
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	first->next = second->next;

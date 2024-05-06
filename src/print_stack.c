@@ -12,13 +12,12 @@
 
 #include "pushswap.h"
 
-
 void	ft_print_lst(t_stack *stack)
 {
 	if (!stack)
 	{
 		ft_printf("NULL\n");
-		return;
+		return ;
 	}
 	while (stack)
 	{
@@ -30,12 +29,12 @@ void	ft_print_lst(t_stack *stack)
 		else
 		{
 			ft_printf("%i\n", stack->content);
-			break;
+			break ;
 		}
 	}
 }
 
-void ft_print_reverse_lst(t_stack *stack)
+void	ft_print_reverse_lst(t_stack *stack)
 {
 	while (stack->next)
 		stack = stack->next;
@@ -49,7 +48,7 @@ void ft_print_reverse_lst(t_stack *stack)
 	}
 }
 
-void ft_print_stacks(t_stack *a, t_stack *b)
+void	ft_print_stacks(t_stack *a, t_stack *b)
 {
 	ft_printf("stack a: ");
 	ft_print_lst(a);

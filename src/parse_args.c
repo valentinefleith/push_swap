@@ -58,12 +58,12 @@ static t_stack	**parse_one_arg(char *argv)
 	char	**args;
 	int		*tab;
 	t_stack	**stack;
-	int size;
+	int		size;
 
 	args = ft_split(argv, ' ');
 	if (args == NULL)
 		exit(MALLOC_ERROR);
-	size = get_tab_size(args); 
+	size = get_tab_size(args);
 	if (!are_valid_mult(args))
 	{
 		ft_printf("Format error.\n");

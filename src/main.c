@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 
 	stack_a = parse_args(argc, argv);
 	stack_b = NULL;

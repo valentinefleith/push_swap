@@ -35,21 +35,20 @@ int					*ft_atoi_tab(char **strs);
 int					get_tab_size(char **strs);
 
 // STACK OPERATIONS
-void ft_swap_2_first_elems(t_stack **stack);
+void				ft_swap_2_first_elems(t_stack **stack);
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);
-int ft_stacklen(t_stack *stack);
+int					ft_stacklen(t_stack *stack);
 t_stack				*ft_stacklast(t_stack *stack);
 void				ft_stackadd_back(t_stack **stack, t_stack *new);
 void				ft_print_lst(t_stack *stack);
-void ft_print_reverse_lst(t_stack *stack);
-void ft_print_stacks(t_stack *a, t_stack *b);
-
+void				ft_print_reverse_lst(t_stack *stack);
+void				ft_print_stacks(t_stack *a, t_stack *b);
 
 // FREE FUNCTIONS
 void				ft_free_stack(t_stack **stack);
-int	*print_error_and_free_tab(int *tab);
-void ft_free_strs(char **args);
+int					*print_error_and_free_tab(int *tab);
+void				ft_free_strs(char **args);
 
 #endif

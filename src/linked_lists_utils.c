@@ -25,17 +25,17 @@ t_stack	*ft_stacknew(int content)
 	return (node);
 }
 
-int ft_stacklen(t_stack *stack)
+int	ft_stacklen(t_stack *stack)
 {
-	int len;
-	
+	int	len;
+
 	len = 0;
 	while (stack)
 	{
 		len++;
 		stack = stack->next;
 	}
-	return len;
+	return (len);
 }
 
 t_stack	*ft_stacklast(t_stack *stack)

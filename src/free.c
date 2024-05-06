@@ -12,9 +12,9 @@
 
 #include "pushswap.h"
 
-void ft_free_strs(char **args)
+void	ft_free_strs(char **args)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (args[i])
@@ -25,7 +25,6 @@ void ft_free_strs(char **args)
 	free(args);
 }
 
-
 int	*print_error_and_free_tab(int *tab)
 {
 	ft_printf("Format error.\n");
@@ -33,9 +32,9 @@ int	*print_error_and_free_tab(int *tab)
 	return (NULL);
 }
 
-void ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack *next;
+	t_stack	*next;
 
 	while (*stack)
 	{
