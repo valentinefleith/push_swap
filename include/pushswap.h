@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 12:16:49 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:40:58 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_stack
 }					t_stack;
 
 t_stack				**parse_args(int argc, char **argv);
-t_stack				**arr_to_linked_list(int *tab);
+t_stack				**arr_to_linked_list(int *tab, int size);
 int					*ft_atoi_tab(char **strs);
 int					get_tab_size(char **strs);
 

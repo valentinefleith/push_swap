@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 12:15:53 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:41:00 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,13 @@ int	*ft_atoi_tab(char **strs)
 		tab[i] = (int)current;
 		i++;
 	}
-	tab[i] = '\0';
+	//tab[i] = '\0';
 	if (!are_unique_nb(tab, i))
 		return (print_error_and_free_tab(tab));
 	return (tab);
 }
 
-t_stack	**arr_to_linked_list(int *tab)
+t_stack	**arr_to_linked_list(int *tab, int size)
 {
 	t_stack	**stack;
 	t_stack	*new;
@@ -108,7 +108,7 @@ t_stack	**arr_to_linked_list(int *tab)
 	if (stack == NULL)
 		return (NULL);
 	*stack = NULL;
-	while (tab[i])
+	while (i < size)
 	{
 		new = ft_stacknew(tab[i]);
 		if (new == NULL)
