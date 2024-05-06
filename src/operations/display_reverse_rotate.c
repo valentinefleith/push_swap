@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   display_reverse_rotate.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:31:18 by vafleith         ###   ########.fr       */
+/*   Created: 2024/05/06 20:24:31 by vafleith          #+#    #+#             */
+/*   Updated: 2024/05/06 20:26:27 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	main(int argc, char **argv)
+void	reverse_rotate_a(t_stack **stack)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	ft_reverse_rotate(stack);
+	ft_printf("rra\n");
+}
 
-	stack_a = parse_args(argc, argv);
-	stack_b = malloc(sizeof(t_stack *));
-	if (stack_b == NULL)
-		return (1);
-	*stack_b = NULL;
-	ft_print_stacks(*stack_a, *stack_b);
-	rotate_a(stack_a);
-	ft_print_stacks(*stack_a, *stack_b);
+void	reverse_rotate_b(t_stack **stack)
+{
+	ft_reverse_rotate(stack);
+	ft_printf("rrb\n");
+}
+
+void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b)
+{
 	reverse_rotate_a(stack_a);
-	ft_print_stacks(*stack_a, *stack_b);
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
+	reverse_rotate_b(stack_b);
+	ft_printf("rrr\n");
 }

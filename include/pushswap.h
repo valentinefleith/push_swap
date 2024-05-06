@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:12:29 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:30:01 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,20 @@ void				ft_swap_2_first_elems(t_stack **stack);
 void				ft_push(t_stack **from, t_stack **to);
 void				ft_rotate(t_stack **stack);
 void				ft_reverse_rotate(t_stack **stack);
+
+
+void push_a(t_stack **stack_a, t_stack **stack_b);
+void push_b(t_stack **stack_a, t_stack **stack_b);
+void swap_a(t_stack **stack);
+void swap_b(t_stack **stack);
+void swap_swap(t_stack **stack_a, t_stack **stack_b);
+void rotate_a(t_stack **stack);
+void rotate_b(t_stack **stack);
+void rotate_both(t_stack **stack_a, t_stack **stack_b);
+void reverse_rotate_a(t_stack **stack);
+void reverse_rotate_b(t_stack **stack);
+void reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
+
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);

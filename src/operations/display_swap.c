@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   display_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:31:18 by vafleith         ###   ########.fr       */
+/*   Created: 2024/05/06 20:17:33 by vafleith          #+#    #+#             */
+/*   Updated: 2024/05/06 20:20:12 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	main(int argc, char **argv)
+void	swap_a(t_stack **stack)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	ft_swap_2_first_elems(stack);
+	ft_printf("sa\n");
+}
 
-	stack_a = parse_args(argc, argv);
-	stack_b = malloc(sizeof(t_stack *));
-	if (stack_b == NULL)
-		return (1);
-	*stack_b = NULL;
-	ft_print_stacks(*stack_a, *stack_b);
-	rotate_a(stack_a);
-	ft_print_stacks(*stack_a, *stack_b);
-	reverse_rotate_a(stack_a);
-	ft_print_stacks(*stack_a, *stack_b);
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
+void	swap_b(t_stack **stack)
+{
+	ft_swap_2_first_elems(stack);
+	ft_printf("sb\n");
+}
+
+void	swap_swap(t_stack **stack_a, t_stack **stack_b)
+{
+	swap_a(stack_a);
+	swap_b(stack_b);
 }

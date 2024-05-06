@@ -6,7 +6,7 @@
 #    By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 15:31:12 by vafleith          #+#    #+#              #
-#    Updated: 2024/05/06 19:56:56 by vafleith         ###   ########.fr        #
+#    Updated: 2024/05/06 20:27:05 by vafleith         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ INC = -Iinclude -Ilibft
 SRC_DIR = src
 
 OPERATIONS_DIR = operations
-OPERATIONS_SRCS = operations.c
+OPERATIONS_SRCS = operations.c display_swap.c display_push.c display_rotate.c \
+				  display_reverse_rotate.c
 OPERATIONS_SRCS := $(addprefix $(OPERATIONS_DIR)/, $(OPERATIONS_SRCS))
 
 PARSE_DIR = parse
