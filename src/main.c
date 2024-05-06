@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 19:40:40 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:13:12 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main(int argc, char **argv)
 	ft_print_stacks(*stack_a, *stack_b);
 	ft_printf("AFTER ROTATE A:\n");
 	ft_rotate(stack_a);
+	ft_print_stacks(*stack_a, *stack_b);
+	ft_printf("AFTER REVERSE ROTATE A:\n");
+	ft_reverse_rotate(stack_a);
 	ft_print_stacks(*stack_a, *stack_b);
 	//ft_push(stack_a, stack_b);
 	//ft_printf("AFTER PUSH:\n");

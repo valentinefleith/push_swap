@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 14:10:23 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 19:41:52 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/06 20:12:09 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,20 @@ void	ft_rotate(t_stack **stack)
 	first->prev = last;
 	*stack = first->next;
 	first->next = NULL;
+}
+
+void	ft_reverse_rotate(t_stack **stack)
+{
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	last = ft_stacklast(*stack);
+	last->next = first;
+	first->prev = last;
+	(last->prev)->next = NULL;
+	last->prev = NULL;
+	*stack = last;
 }
