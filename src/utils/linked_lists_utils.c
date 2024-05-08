@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 16:13:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 12:16:15 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:23:31 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_stack	*ft_stacknew(int content)
 	if (node == NULL)
 		return (NULL);
 	node->content = content;
+	node->sorted_index = 0;
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);

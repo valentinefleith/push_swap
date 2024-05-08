@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:53:34 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:19:53 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_stack
 {
 	int				content;
+	unsigned int	sorted_index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;
@@ -54,6 +55,7 @@ void				reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 
 // SORT
 int					is_sorted(t_stack *stack);
+void				fill_presort_indices(t_stack *stack, size_t len);
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);
@@ -63,6 +65,7 @@ void				ft_stackadd_back(t_stack **stack, t_stack *new);
 void				ft_print_lst(t_stack *stack);
 void				ft_print_reverse_lst(t_stack *stack);
 void				ft_print_stacks(t_stack *a, t_stack *b);
+void				ft_print_indices(t_stack *stack);
 
 // FREE FUNCTIONS
 void				ft_free_stack(t_stack **stack);

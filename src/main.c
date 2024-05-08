@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 20:52:56 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/08 15:25:01 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	main(int argc, char **argv)
 		return (1);
 	*stack_b = NULL;
 	ft_print_stacks(*stack_a, *stack_b);
-	if (is_sorted(*stack_a))
-		ft_printf("SORTED\n");
-	else
-		ft_printf("NOT SORTED\n");
+	fill_presort_indices(*stack_a, ft_stacklen(*stack_a));
+	ft_print_indices(*stack_a);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 }

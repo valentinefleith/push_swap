@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 02:37:51 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 18:16:36 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:51:50 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,27 @@ void	ft_print_reverse_lst(t_stack *stack)
 	}
 }
 
+void	ft_print_indices(t_stack *stack)
+{
+	if (!stack)
+	{
+		ft_printf("NULL\n");
+		return ;
+	}
+	while (stack)
+	{
+		if (stack->next)
+		{
+			ft_printf("%i -> ", stack->sorted_index);
+			stack = stack->next;
+		}
+		else
+		{
+			ft_printf("%i\n", stack->sorted_index);
+			break ;
+		}
+	}
+}
 void	ft_print_stacks(t_stack *a, t_stack *b)
 {
 	ft_printf("stack a: ");
