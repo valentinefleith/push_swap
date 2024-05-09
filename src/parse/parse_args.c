@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 13:43:18 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:11:17 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	is_valid_one(char *str)
 	int	i;
 
 	i = 0;
-	if (ft_strlen(str) == 1 && *str == '-')
+	if ((ft_strlen(str) == 1 && *str == '-') || (ft_superstrlen(str, '0') > 11))
 		return (0);
 	if (!ft_strncmp(str, "-0", 2))
 		return (0);
@@ -66,7 +66,7 @@ static t_stack	**parse_one_arg(char *argv)
 	size = get_tab_size(args);
 	if (!are_valid_mult(args))
 	{
-		ft_printf("Format error.\n");
+		ft_printf("Error.\n");
 		ft_free_strs(args);
 		exit(ARGUMENT_ERROR);
 	}
@@ -89,7 +89,7 @@ static t_stack	**parse_several_args(int argc, char **argv)
 	argv++;
 	if (!are_valid_mult(argv))
 	{
-		ft_printf("Format error.\n");
+		ft_printf("Error.\n");
 		exit(ARGUMENT_ERROR);
 	}
 	tab = ft_atoi_tab(argv);

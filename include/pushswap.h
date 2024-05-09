@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/08 15:19:53 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 14:10:28 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,13 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
+
+// PARSING
 t_stack				**parse_args(int argc, char **argv);
 t_stack				**arr_to_linked_list(int *tab, int size);
 int					*ft_atoi_tab(char **strs);
 int					get_tab_size(char **strs);
+size_t ft_superstrlen(char *str, char c);
 
 // STACK OPERATIONS
 void				ft_swap_2_first_elems(t_stack **stack);

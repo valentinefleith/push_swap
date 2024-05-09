@@ -6,7 +6,7 @@
 #    By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 15:31:12 by vafleith          #+#    #+#              #
-#    Updated: 2024/05/08 16:34:57 by vafleith         ###   ########.fr        #
+#    Updated: 2024/05/09 14:09:46 by vafleith         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OPERATIONS_SRCS = operations.c display_swap.c display_push.c display_rotate.c \
 OPERATIONS_SRCS := $(addprefix $(OPERATIONS_DIR)/, $(OPERATIONS_SRCS))
 
 PARSE_DIR = parse
-PARSE_SRCS = parse_args.c store_stack.c
+PARSE_SRCS = parse_args.c store_stack.c parse_utils.c
 PARSE_SRCS := $(addprefix $(PARSE_DIR)/, $(PARSE_SRCS))
 
 SORT_DIR = sort
