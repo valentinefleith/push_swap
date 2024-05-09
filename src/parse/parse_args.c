@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/09 15:58:03 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:57:50 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,12 @@ static int	is_valid_one(char *str)
 static int	are_valid_mult(char **strs)
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (strs[i])
 	{
 		if (!is_valid_one(strs[i]))
 			return (0);
-		j = i;
-		while (strs[j])
-		{
-			if (i != j && ft_strlen(strs[i]) == ft_strlen(strs[j])
-				&& !ft_strncmp(strs[i], strs[j], ft_strlen(strs[i])))
-				return (0);
-			j++;
-		}
 		i++;
 	}
 	return (1);

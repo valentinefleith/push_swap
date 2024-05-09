@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:56:16 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 19:43:16 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:00:47 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,6 @@ int	get_tab_size(char **strs)
 	while (strs[i])
 		i++;
 	return (i);
-}
-
-static int	are_unique_nb(int *tab, int len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < len)
-	{
-		j = i;
-		while (j < len)
-		{
-			if (i != j && tab[i] == tab[j])
-			{
-				return (0);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (1);
 }
 
 int	*ft_atoi_tab(char **strs)

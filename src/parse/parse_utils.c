@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 14:07:11 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/09 15:59:07 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 17:01:09 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,29 @@ size_t ft_superstrlen(char *str, char c)
 		len++;
 	return len;
 }
+
+int	are_unique_nb(int *tab, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < len)
+	{
+		j = i;
+		while (j < len)
+		{
+			if (i != j && tab[i] == tab[j])
+			{
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 
 int is_full_space(char *str)
 {
