@@ -14,8 +14,8 @@
 
 static int	is_valid_one(char *str)
 {
-	int	i;
-	size_t len;
+	int		i;
+	size_t	len;
 
 	len = ft_strlen(str);
 	i = 0;
@@ -25,7 +25,8 @@ static int	is_valid_one(char *str)
 		return (0);
 	while (str[i])
 	{
-		if ((!ft_isdigit(str[i]) && !ft_strchr("+-", str[i])) || (ft_strchr("+-", str[i]) && i != 0))
+		if ((!ft_isdigit(str[i]) && !ft_strchr("+-", str[i]))
+			|| (ft_strchr("+-", str[i]) && i != 0))
 			return (0);
 		i++;
 	}
@@ -72,16 +73,15 @@ static t_stack	**parse_one_arg(char *argv)
 	return (stack);
 }
 
-
 static t_stack	**parse_several_args(int argc, char **argv)
 {
 	t_stack	**stack;
-	char *joined_args;
-	
+	char	*joined_args;
+
 	argv++;
 	joined_args = ft_join_args(argc, argv);
 	if (joined_args == NULL)
-		return NULL;
+		return (NULL);
 	stack = parse_one_arg(joined_args);
 	free(joined_args);
 	return (stack);

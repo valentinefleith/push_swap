@@ -12,12 +12,12 @@
 
 #include "pushswap.h"
 
-size_t ft_superstrlen(char *str, char c)
+size_t	ft_superstrlen(char *str, char c)
 {
-	size_t len;
+	size_t	len;
 
 	if (!str)
-		return 0;
+		return (0);
 	len = 0;
 	if (*str == '-' || *str == '+')
 		str++;
@@ -25,7 +25,7 @@ size_t ft_superstrlen(char *str, char c)
 		str++;
 	while (str[len])
 		len++;
-	return len;
+	return (len);
 }
 
 int	are_unique_nb(int *tab, int len)
@@ -50,21 +50,20 @@ int	are_unique_nb(int *tab, int len)
 	return (1);
 }
 
-
-int is_full_space(char *str)
+int	is_full_space(char *str)
 {
 	while (*str)
 	{
 		if (*str != ' ')
-			return 0;
+			return (0);
 		str++;
 	}
-	return 1;
+	return (1);
 }
 
-static size_t get_argsize(int argc, char **argv)
+static size_t	get_argsize(int argc, char **argv)
 {
-	size_t size;
+	size_t	size;
 
 	size = 0;
 	while (*argv)
@@ -72,18 +71,18 @@ static size_t get_argsize(int argc, char **argv)
 		size += ft_strlen(*argv);
 		argv++;
 	}
-	return size + (argc - 1);
+	return (size + (argc - 1));
 }
 
-char *ft_join_args(int argc, char **argv)
+char	*ft_join_args(int argc, char **argv)
 {
-	char *args;
-	int i;
-	int joined_idx;
+	char	*args;
+	int		i;
+	int		joined_idx;
 
 	args = malloc(1 + get_argsize(argc, argv) * sizeof(char));
 	if (args == NULL)
-		return NULL;
+		return (NULL);
 	joined_idx = 0;
 	while (*argv)
 	{
@@ -95,9 +94,9 @@ char *ft_join_args(int argc, char **argv)
 			joined_idx++;
 		}
 		args[joined_idx] = ' ';
-		joined_idx ++;
+		joined_idx++;
 		argv++;
 	}
 	args[joined_idx] = '\0';
-	return args;
+	return (args);
 }
