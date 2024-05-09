@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/09 14:11:17 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:43:51 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static t_stack	**parse_several_args(int argc, char **argv)
 {
 	int		*tab;
 	t_stack	**stack;
-
+	
 	argv++;
 	if (!are_valid_mult(argv))
 	{
@@ -107,6 +107,13 @@ t_stack	**parse_args(int argc, char **argv)
 	if (argc < 2)
 		exit(ARGUMENT_ERROR);
 	if (argc == 2)
+	{
+		if (!argv[1][0] || is_full_space(argv[1]))
+		{
+			ft_printf("Error.\n");
+			exit(ARGUMENT_ERROR);
+		}
 		return (parse_one_arg(argv[1]));
+	}
 	return (parse_several_args(argc, argv));
 }
