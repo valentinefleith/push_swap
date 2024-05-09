@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/09 17:01:09 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:51:50 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int					get_tab_size(char **strs);
 size_t ft_superstrlen(char *str, char c);
 int is_full_space(char *str);
 int	are_unique_nb(int *tab, int len);
+char *ft_join_args(int argc, char **argv);
 
 // STACK OPERATIONS
 void				ft_swap_2_first_elems(t_stack **stack);

@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:48:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/08 15:25:01 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/09 18:24:11 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 	t_stack	**stack_b;
 
 	stack_a = parse_args(argc, argv);
+	if (!stack_a)
+		exit(1);
 	stack_b = malloc(sizeof(t_stack *));
 	if (stack_b == NULL)
 		return (1);
