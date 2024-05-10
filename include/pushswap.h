@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:49:17 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/09 18:51:50 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:16:16 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void				reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 // SORT
 int					is_sorted(t_stack *stack);
 void				fill_presort_indices(t_stack *stack, size_t len);
+void radix_sort(t_stack **stack_a, t_stack **stack_b);
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);
