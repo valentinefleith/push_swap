@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 12:23:45 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/10 14:28:01 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/10 16:15:26 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,35 @@ static int get_max_bits(size_t size)
 	return max_bits;
 }
 
-void	radix_sort(t_stack **stack_a, t_stack **stack_b)
+void small_sort(t_stack **stack_a, t_stack **stack_b, size_t size)
+{
+	return;	
+}
+
+void sort_stack(t_stack **stack_a, t_stack **stack_b)
+{
+	size_t size;
+
+	size = ft_stacklen(*stack_a);
+	if (size == 1)
+		return;
+	if (size == 2)
+	{
+		if ((*stack_a)->content < (*stack_a)->next->content)
+			return;
+		return swap_a(stack_a);
+	}
+	if (size <= 5)
+		return small_sort(stack_a, stack_b, size);
+	return radix_sort(stack_a, stack_b, size);
+}
+
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, size_t size)
 {
 	unsigned int max_bits;
 	unsigned int i;
 	unsigned int j;
-	size_t size;
 	
-	size = ft_stacklen(*stack_a);
 	max_bits = get_max_bits(size);
 	i = 0;
 	while (i < max_bits)
