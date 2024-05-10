@@ -6,7 +6,7 @@
 #    By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 15:31:12 by vafleith          #+#    #+#              #
-#    Updated: 2024/05/10 13:15:37 by vafleith         ###   ########.fr        #
+#    Updated: 2024/05/10 17:20:55 by vafleith         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ PARSE_SRCS = parse_args.c store_stack.c parse_utils.c
 PARSE_SRCS := $(addprefix $(PARSE_DIR)/, $(PARSE_SRCS))
 
 SORT_DIR = sort
-SORT_SRCS = sort_utils.c presort.c radix.c
+SORT_SRCS = sort_utils.c presort.c radix.c small_sorts.c
 SORT_SRCS := $(addprefix $(SORT_DIR)/, $(SORT_SRCS))
 
 UTILS_DIR = utils
