@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 12:14:32 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/06 12:17:00 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/10 16:18:05 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_free_strs(char **args)
 
 int	*print_error_and_free_tab(int *tab)
 {
-	ft_printf("Format error.\n");
+	write(2, "Error.\n", 7);
 	free(tab);
 	return (NULL);
 }
