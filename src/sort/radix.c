@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 12:23:45 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/10 17:04:21 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/10 19:03:24 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ static int get_max_bits(size_t size)
 void sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	size_t size;
-
+	
+	if (is_sorted(*stack_a))
+		return;
 	size = ft_stacklen(*stack_a);
 	if (size == 1)
 		return;
