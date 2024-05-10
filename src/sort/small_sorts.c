@@ -12,37 +12,37 @@
 
 #include "pushswap.h"
 
-static int get_target_pos(t_stack *stack, unsigned int target)
+static int	get_target_pos(t_stack *stack, unsigned int target)
 {
-	int pos;
+	int	pos;
 
 	pos = 0;
 	while (stack)
 	{
 		if (stack->sorted_index == target)
-		   return pos;
+			return (pos);
 		pos++;
 		stack = stack->next;
 	}
-	return pos;
+	return (pos);
 }
 
-static void sort_three(t_stack **stack, size_t size)
+static void	sort_three(t_stack **stack, size_t size)
 {
 	if ((*stack)->sorted_index == size - 1)
 		rotate_a(stack);
 	if ((*stack)->next->sorted_index == size - 1)
 		reverse_rotate_a(stack);
 	if ((*stack)->sorted_index < (*stack)->next->sorted_index)
-		return;
-	return swap_a(stack);
+		return ;
+	return (swap_a(stack));
 }
 
-static void sort_four(t_stack **stack_a, t_stack **stack_b, size_t size)
+static void	sort_four(t_stack **stack_a, t_stack **stack_b, size_t size)
 {
-	int min_pos;
-	unsigned int target;
-	
+	int				min_pos;
+	unsigned int	target;
+
 	if (size == 5)
 		target = 1;
 	else
@@ -64,9 +64,9 @@ static void sort_four(t_stack **stack_a, t_stack **stack_b, size_t size)
 	push_a(stack_a, stack_b);
 }
 
-static void sort_five(t_stack **stack_a, t_stack **stack_b, size_t size)
+static void	sort_five(t_stack **stack_a, t_stack **stack_b, size_t size)
 {
-	int min_pos;
+	int	min_pos;
 
 	min_pos = get_target_pos(*stack_a, 0);
 	if (min_pos < 3)
@@ -87,11 +87,11 @@ static void sort_five(t_stack **stack_a, t_stack **stack_b, size_t size)
 	push_a(stack_a, stack_b);
 }
 
-void small_sort(t_stack **stack_a, t_stack **stack_b, size_t size)
+void	small_sort(t_stack **stack_a, t_stack **stack_b, size_t size)
 {
 	if (size == 3)
-		return sort_three(stack_a, size);
+		return (sort_three(stack_a, size));
 	if (size == 4)
-		return sort_four(stack_a, stack_b, size);
-	return sort_five(stack_a, stack_b, size);	
+		return (sort_four(stack_a, stack_b, size));
+	return (sort_five(stack_a, stack_b, size));
 }

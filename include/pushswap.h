@@ -59,11 +59,13 @@ void				reverse_rotate_b(t_stack **stack);
 void				reverse_rotate_both(t_stack **stack_a, t_stack **stack_b);
 
 // SORT
-void sort_stack(t_stack **stack_a, t_stack **stack_b);
+void				sort_stack(t_stack **stack_a, t_stack **stack_b);
 int					is_sorted(t_stack *stack);
 void				fill_presort_indices(t_stack *stack, size_t len);
-void radix_sort(t_stack **stack_a, t_stack **stack_b, size_t size);
-void small_sort(t_stack **stack_a, t_stack **stack_b, size_t size);
+void				radix_sort(t_stack **stack_a, t_stack **stack_b,
+						size_t size);
+void				small_sort(t_stack **stack_a, t_stack **stack_b,
+						size_t size);
 
 // DOUBLY LINKED LISTS UTILS
 t_stack				*ft_stacknew(int content);
