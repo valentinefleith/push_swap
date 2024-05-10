@@ -22,7 +22,10 @@ int	main(int argc, char **argv)
 		return (1);
 	stack_b = malloc(sizeof(t_stack *));
 	if (stack_b == NULL)
+	{
+		ft_free_stack(stack_a);
 		return (1);
+	}
 	*stack_b = NULL;
 	//ft_print_stacks(*stack_a, *stack_b);
 	fill_presort_indices(*stack_a, ft_stacklen(*stack_a));
