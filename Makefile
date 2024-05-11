@@ -6,7 +6,7 @@
 #    By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/28 15:31:12 by vafleith          #+#    #+#              #
-#    Updated: 2024/05/10 17:20:55 by vafleith         ###   ########.fr        #
+#    Updated: 2024/05/11 11:58:25 by vafleith         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	@make clean -C $(LIBFT_PATH) > /dev/null
+	@make fclean -C $(LIBFT_PATH) > /dev/null
 	@rm -rf $(NAME)
 
 .PHONY: re
