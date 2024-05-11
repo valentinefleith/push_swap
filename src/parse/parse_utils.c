@@ -28,9 +28,9 @@ size_t	ft_superstrlen(char *str, char c)
 	return (len);
 }
 
-void check_non_empty_strings(int argc, char **argv)
+void	check_non_empty_strings(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i < argc)

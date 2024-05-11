@@ -39,7 +39,7 @@ size_t				ft_superstrlen(char *str, char c);
 int					is_full_space(char *str);
 int					are_unique_nb(int *tab, int len);
 char				*ft_join_args(int argc, char **argv);
-void check_non_empty_strings(int argc, char **argv);
+void				check_non_empty_strings(int argc, char **argv);
 
 // STACK OPERATIONS
 void				ft_swap_2_first_elems(t_stack **stack);
