@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 13:34:40 by vafleith          #+#    #+#             */
-/*   Updated: 2023/11/21 22:33:15 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/11 12:02:07 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ static char	**ft_fill_substrs(char **strs, char *s, int nb_words, char c)
 		if (s[j] != c)
 		{
 			strs[i] = ft_substr(s, j, ft_strlen_custom(s + j, c));
-			i++;
-			if (!strs)
+			if (!strs[i])
 			{
 				ft_free_all_substrs(strs, nb_words);
 				return (NULL);
 			}
+			i++;
 			while (s[j] && s[j] != c)
 				j++;
 		}
