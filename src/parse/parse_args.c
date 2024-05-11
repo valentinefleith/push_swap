@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/11 11:25:47 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/11 12:09:42 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static t_stack	**parse_several_args(int argc, char **argv)
 t_stack	**parse_args(int argc, char **argv)
 {
 	if (argc < 2)
-		exit(ARGUMENT_ERROR);
+		exit(0);
 	if (argc == 2)
 	{
 		if (!argv[1][0] || is_full_space(argv[1]))
