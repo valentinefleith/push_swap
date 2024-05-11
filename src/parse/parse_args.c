@@ -6,7 +6,7 @@
 /*   By: vafleith <vafleith@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:05:41 by vafleith          #+#    #+#             */
-/*   Updated: 2024/05/10 16:27:21 by vafleith         ###   ########.fr       */
+/*   Updated: 2024/05/11 11:25:47 by vafleith         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ t_stack	**parse_args(int argc, char **argv)
 		}
 		return (parse_one_arg(argv[1]));
 	}
+	check_non_empty_strings(argc, argv);
 	return (parse_several_args(argc, argv));
 }
